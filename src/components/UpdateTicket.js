@@ -4,7 +4,6 @@ import axios from 'axios';
 const UpdateTicket = () => {
   const [movieId, setMovieId] = useState('');
   const [movieName, setMovieName] = useState('');
-  const [seatsAvailable, setSeatsAvailable] = useState('');
   const [updateStatus, setUpdateStatus] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -13,7 +12,8 @@ const UpdateTicket = () => {
 
     try {
       const response = await axios.put(`http://localhost:8000/api/v1.0/moviebooking/${movieName}/update/${movieId}/`, {
-        seats_available: seatsAvailable
+        movie_id : movieId,
+        movie_name : movieName
       });
       setUpdateStatus(response.data.message);
       setErrorMessage('');
@@ -36,10 +36,6 @@ const UpdateTicket = () => {
 
         <label>Movie Name:</label>
         <input type="text" value={movieName} onChange={(e) => setMovieName(e.target.value)} />
-
-        <label>Seats Available:</label>
-        <input type="number" value={seatsAvailable} onChange={(e) => setSeatsAvailable(e.target.value)} />
-
         <button type="submit">Update Ticket</button>
       </form>
 
