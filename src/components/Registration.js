@@ -31,7 +31,6 @@ const Registration = () => {
     setLastName(event.target.value);
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -41,12 +40,11 @@ const Registration = () => {
         password: password,
         email: email,
         first_name: firstName,
-        last_name: lastName
+        last_name: lastName,
       })
       .then((response) => {
         console.log('User registered successfully');
-        // Navigate to the Login component
-        navigate("/login");
+        navigate('/login');
       })
       .catch((error) => {
         if (error.response) {
@@ -56,6 +54,17 @@ const Registration = () => {
         }
       });
   };
+
+  const alreadyRegistered = localStorage.getItem('username');
+
+  if (alreadyRegistered && alreadyRegistered !== '') {
+    return (
+      <div className="container">
+        <br></br>
+        <h2 className="fs-1 fw-bold text-center">Already logged in as user {alreadyRegistered}!</h2>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
@@ -73,7 +82,7 @@ const Registration = () => {
             value={username}
             onChange={handleUsernameChange}
           />
-      <br></br>
+          <br></br>
         </div>
         <div className="form-group">
           <label htmlFor="password" className="form-label fw-bold">
@@ -87,7 +96,7 @@ const Registration = () => {
             value={password}
             onChange={handlePasswordChange}
           />
-      <br></br>
+          <br></br>
         </div>
         <div className="form-group">
           <label htmlFor="email" className="form-label fw-bold">
@@ -101,7 +110,7 @@ const Registration = () => {
             value={email}
             onChange={handleEmailChange}
           />
-      <br></br>
+          <br></br>
         </div>
         <div className="form-group">
           <label htmlFor="firstName" className="form-label fw-bold">
@@ -115,7 +124,7 @@ const Registration = () => {
             value={firstName}
             onChange={handleFirstNameChange}
           />
-      <br></br>
+          <br></br>
         </div>
         <div className="form-group">
           <label htmlFor="lastName" className="form-label fw-bold">
@@ -129,7 +138,7 @@ const Registration = () => {
             value={lastName}
             onChange={handleLastNameChange}
           />
-      <br></br>
+          <br></br>
         </div>
         <div className="d-grid gap-2 d-md-flex justify-content-md-end">
           <button className="btn btn-outline-danger" type="submit">

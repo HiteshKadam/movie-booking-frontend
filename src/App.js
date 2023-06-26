@@ -7,6 +7,7 @@ import Login from './components/Login';
 import AdminView from './components/AdminView';
 import Registration from './components/Registration';
 import Logout from './components/Logout';
+import Home from './components/Home';
 
 function App() {
   localStorage.setItem('username', '');
@@ -54,6 +55,7 @@ function App() {
       </nav>
 
       <Routes>
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Registration />} />
         <Route exact path="/movies" element={<MovieList />} />
