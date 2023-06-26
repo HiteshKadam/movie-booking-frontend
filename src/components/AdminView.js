@@ -26,7 +26,7 @@ function AdminView() {
   }
 
   if (!isAdmin) {
-    return <p>You must be an admin to view this page.</p>;
+    return <p className="fs-4 fw-bold text-center">You must be an admin to view this page.</p>;
   }
 
   if (value === 'viewticket') {

@@ -9,35 +9,61 @@ import Registration from './components/Registration';
 import Logout from './components/Logout';
 
 function App() {
-localStorage.setItem('username',null);
+  localStorage.setItem('username', '');
+
   return (
     <Router>
-      <div>
-        <h1>Movie Booking App</h1>
-        <div className="btn-group">
-          <Link to="/login" className="btn btn-primary">Login</Link>
-          <Link to="/register" className="btn btn-primary">Register</Link>
-          <Link to="/movies" className="btn btn-primary">Movie List</Link>
-          <Link to="/movies/search" className="btn btn-primary">Movie Search</Link>
-          <Link to="/tickets/add" className="btn btn-primary">Book Ticket</Link>
-          <Link to={`/tickets/list/viewticket`} className="btn btn-primary">View Tickets</Link>
-          <Link to="/movies/delete/deleteticket" className="btn btn-primary">Delete Movie</Link>
-          <Link to="/movies/update/updateticket" className="btn btn-primary">Update Ticket</Link>
-          <Link to="/logout" className="btn btn-primary">Logout</Link>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div className="container">
+          <Link to="/" className="navbar-brand">Movie Booking App</Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to="/login" className="nav-link nav-item-font">Login</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/register" className="nav-link nav-item-font">Register</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/movies" className="nav-link nav-item-font">Movie List</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/movies/search" className="nav-link nav-item-font">Movie Search</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/tickets/add" className="nav-link nav-item-font">Book Ticket</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/tickets/list/viewticket" className="nav-link nav-item-font">View Tickets</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/movies/delete/deleteticket" className="nav-link nav-item-font">Delete Movie</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/movies/update/updateticket" className="nav-link nav-item-font">Update Ticket</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/logout" className="nav-link nav-item-font">Logout</Link>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
 
-        <Routes>
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Registration />} />
-          <Route exact path="/movies" element={<MovieList />} />
-          <Route exact path="/movies/search" element={<MovieSearch />} />
-          <Route exact path="/tickets/add" element={<TicketBooking />} />
-          <Route exact path="/tickets/list/:value" element={<AdminView />} />
-          <Route exact path="/movies/delete/:value" element={<AdminView />} />
-          <Route exact path="/movies/update/:value" element={<AdminView />} />
-          <Route exact path="/logout" element={<Logout />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Registration />} />
+        <Route exact path="/movies" element={<MovieList />} />
+        <Route exact path="/movies/search" element={<MovieSearch />} />
+        <Route exact path="/tickets/add" element={<TicketBooking />} />
+        <Route exact path="/tickets/list/:value" element={<AdminView />} />
+        <Route exact path="/movies/delete/:value" element={<AdminView />} />
+        <Route exact path="/movies/update/:value" element={<AdminView />} />
+        <Route exact path="/logout" element={<Logout />} />
+      </Routes>
     </Router>
   );
 }
