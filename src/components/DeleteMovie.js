@@ -25,20 +25,48 @@ const DeleteMovie = () => {
   };
 
   return (
-    <div>
-      <h2>Delete Movie</h2>
+    <div className="container">
+      <h2 className="fs-1 fw-bold text-center">Delete Movie</h2>
+      <br></br>
       <form onSubmit={handleDelete}>
-        <label>Movie ID:</label>
-        <input type="number" value={movieId} onChange={(e) => setMovieId(e.target.value)} />
-
-        <label>Movie Name:</label>
-        <input type="text" value={movieName} onChange={(e) => setMovieName(e.target.value)} />
-
-        <button type="submit">Delete Movie</button>
+        <div className="form-group">
+          <label htmlFor="movieId" className="form-label fw-bold">
+            <span className="label-icon">&#128221;</span> Movie ID:
+          </label>
+          <input
+            type="number"
+            className="form-control"
+            id="movieId"
+            placeholder="Enter Movie ID"
+            value={movieId}
+            onChange={(e) => setMovieId(e.target.value)}
+          />
+        </div>
+        <br></br>
+        <div className="form-group">
+          <label htmlFor="movieName" className="form-label fw-bold">
+            <span className="label-icon"></span> Movie Name:
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="movieName"
+            placeholder="Enter Movie Name"
+            value={movieName}
+            onChange={(e) => setMovieName(e.target.value)}
+          />
+        </div>
+        <br></br>
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="submit" className="btn btn-outline-danger">
+            Delete Movie
+          </button>
+        </div>
       </form>
 
-      {deleteStatus && <p>{deleteStatus}</p>}
-      {errorMessage && <p>{errorMessage}</p>}
+      <br></br>
+      {deleteStatus && <p className="fs-4 fw-bold text-center">{deleteStatus}</p>}
+      {errorMessage && <p className="fs-4 fw-bold text-center">{errorMessage}</p>}
     </div>
   );
 };

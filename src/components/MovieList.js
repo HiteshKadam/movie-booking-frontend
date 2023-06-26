@@ -19,10 +19,12 @@ const MovieList = () => {
 
   return (
     <div className="container">
-      <h2 class="fs-1 fw-bold text-center">Movie List</h2>
+      <h2 class="fs-1 fw-bold text-center">MOVIE LIST</h2>
+      <br></br>
       <table class="table table-bordered table-hover">
         <thead>
           <tr class="table-danger text-center">
+            <th>Movie ID</th>
             <th>Movie Name</th>
             <th>Theatre Name</th>
             <th>Total Tickets Allotted</th>
@@ -31,6 +33,7 @@ const MovieList = () => {
         <tbody>
           {movies.map((movie) => (
             <tr key={movie.id} class="table-light text-center">
+              <td>{movie.id}</td>
               <td>{movie.movie_name}</td>
               <td>{movie.theatre_name}</td>
               <td>{movie.total_tickets_allotted}</td>

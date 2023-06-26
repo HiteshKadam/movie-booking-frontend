@@ -28,28 +28,33 @@ function ViewTicketsAdmin() {
   }
 
   return (
-    <div>
-      <h2>View Tickets</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Movie Name</th>
-            <th>Theatre Name</th>
-            <th>Number of Tickets</th>
-            <th>Seat Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tickets.map((ticket) => (
-            <tr key={ticket.id}>
-              <td>{ticket.movie.movie_name}</td>
-              <td>{ticket.movie.theatre_name}</td>
-              <td>{ticket.num_tickets}</td>
-              <td>{ticket.seat_number}</td>
+    <div className="container">
+      <h2 className="fs-1 fw-bold text-center">View Tickets</h2>
+      <br></br>
+      {error ? (
+        <p className="fs-4 fw-bold text-center">{error}</p>
+      ) : (
+        <table className="table table-bordered table-hover">
+          <thead>
+            <tr className="table-danger text-center">
+              <th>Movie Name</th>
+              <th>Theatre Name</th>
+              <th>Number of Tickets</th>
+              <th>Seat Number</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {tickets.map((ticket) => (
+              <tr key={ticket.id} className="table-light text-center">
+                <td>{ticket.movie.movie_name}</td>
+                <td>{ticket.movie.theatre_name}</td>
+                <td>{ticket.num_tickets}</td>
+                <td>{ticket.seat_number}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }
