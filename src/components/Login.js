@@ -29,28 +29,34 @@ const Login = () => {
     };
   
   return (
-    <div>
-      <h2>Login</h2>
+    <div className="container">
+      <h2 class="fs-1 fw-bold text-center">LOGIN</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
+        <div className="form-group">
+          <label htmlFor="username" class="form-label fw-bold">Username:</label>
           <input
+            className="form-control"
             type="text"
             id="username"
+            placeholder="Username"
             value={username}
             onChange={handleUsernameChange}
           />
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
+        <div className="form-group">
+          <label htmlFor="password" class="form-label fw-bold">Password:</label>
           <input
+            className="form-control"
             type="password"
             id="password"
+            placeholder="Password"
             value={password}
             onChange={handlePasswordChange}
           />
         </div>
-        <button type="submit">Login</button>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button className="btn btn-outline-danger" type="submit">Login</button>
+        </div>
       </form>
     </div>
   );
