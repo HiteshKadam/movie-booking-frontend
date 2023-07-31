@@ -16,6 +16,9 @@ const TicketBooking = () => {
         num_tickets: numTickets,
         seat_number: seatNumber
       });
+      setMovieName('');
+      setNumTickets('');
+      setSeatNumber('');
       setBookingStatus(`Tickets booked successfully! Movie: ${response.data.movie.movie_name}, Tickets: ${response.data.ticket.num_tickets}`);
       setErrorMessage('');
     } catch (error) {
