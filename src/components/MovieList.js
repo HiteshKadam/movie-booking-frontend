@@ -10,7 +10,7 @@ const MovieList = () => {
 
   const fetchMovies = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/v1.0/moviebooking/all');
+      const response = await axios.get('http://54.221.6.173:8000/api/v1.0/moviebooking/all');
       setMovies(response.data);
     } catch (error) {
       console.error('Error fetching movies:', error);

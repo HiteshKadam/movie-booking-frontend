@@ -35,7 +35,7 @@ const Registration = () => {
     event.preventDefault();
 
     axios
-      .post('http://localhost:8000/api/v1.0/moviebooking/register/', {
+      .post('http://54.221.6.173:8000/api/v1.0/moviebooking/register/', {
         username: username,
         password: password,
         email: email,

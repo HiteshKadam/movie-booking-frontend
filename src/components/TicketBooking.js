@@ -12,7 +12,7 @@ const TicketBooking = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post(`http://localhost:8000/api/v1.0/moviebooking/${movieName}/add/`, {
+      const response = await axios.post(`http://54.221.6.173:8000/api/v1.0/moviebooking/${movieName}/add/`, {
         num_tickets: numTickets,
         seat_number: seatNumber
       });

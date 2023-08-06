@@ -14,7 +14,7 @@ function AdminView() {
     try {
       const username = localStorage.getItem('username');
 
-      const response = await axios.get('http://localhost:8000/api/v1.0/moviebooking/check_admin_status/', {
+      const response = await axios.get('http://54.221.6.173:8000/api/v1.0/moviebooking/check_admin_status/', {
         params:{
             username : username
         }

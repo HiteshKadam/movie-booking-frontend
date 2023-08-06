@@ -27,7 +27,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     axios
-      .post(`http://localhost:8000/api/v1.0/moviebooking/login/`, {
+      .post(`http://54.221.6.173:8000/api/v1.0/moviebooking/login/`, {
         username: username,
         password: password,
       })

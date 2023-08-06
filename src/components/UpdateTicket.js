@@ -11,7 +11,7 @@ const UpdateTicket = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.put(`http://localhost:8000/api/v1.0/moviebooking/${movieName}/update/${movieId}/`, {
+      const response = await axios.put(`http://54.221.6.173:8000/api/v1.0/moviebooking/${movieName}/update/${movieId}/`, {
         movie_id : movieId,
         movie_name : movieName
       });

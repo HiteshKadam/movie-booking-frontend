@@ -4,7 +4,7 @@ import axios from 'axios';
 const Logout = () => {
   useEffect(() => {
     axios
-      .get('http://localhost:8000/api/v1.0/moviebooking/logout/')
+      .get('http://54.221.6.173:8000/api/v1.0/moviebooking/logout/')
       .then((response) => {
         localStorage.setItem('username', '');
         console.log('User logged out successfully');

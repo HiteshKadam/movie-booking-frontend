@@ -11,7 +11,7 @@ const DeleteMovie = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.delete(`http://localhost:8000/api/v1.0/moviebooking/${movieName}/delete/${movieId}/`);
+      const response = await axios.delete(`http://54.221.6.173:8000/api/v1.0/moviebooking/${movieName}/delete/${movieId}/`);
       setDeleteStatus(response.data.message);
       setErrorMessage('');
     } catch (error) {
